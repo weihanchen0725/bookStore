@@ -10,6 +10,3 @@ deploy:
   provider: heroku
   api_key: $HEROKU
   app: "demo-book-store-weihan"
-
-server:
-  port: $PORT
