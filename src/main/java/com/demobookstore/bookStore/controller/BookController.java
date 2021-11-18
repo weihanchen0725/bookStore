@@ -23,8 +23,12 @@ public class BookController {
                 .title("My First Book Title")
                 .build();
 
-        books.add(book);
+        BookDto secondBook = BookDto.builder()
+                .title("My Second Book Title")
+                .build();
 
+        books.add(book);
+        books.add(secondBook);
         return ResponseEntity.ok(books);
     }
 
