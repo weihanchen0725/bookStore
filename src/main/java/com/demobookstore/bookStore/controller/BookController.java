@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.awt.print.Book;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,12 +17,18 @@ public class BookController {
 
     @GetMapping
     public ResponseEntity<List<BookDto>> getBooks(){
+        List<BookDto> books = new ArrayList<>();
+
         BookDto book = BookDto.builder()
                 .title("My First Book Title")
                 .build();
-        List<BookDto> books = new ArrayList<>();
-        books.add(book);
 
+        BookDto bookSecond = BookDto.builder()
+                .title("This is Second Book Title")
+                .build();
+
+        books.add(book);
+        books.add(bookSecond);
         return ResponseEntity.ok(books);
     }
 
